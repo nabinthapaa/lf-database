@@ -5,8 +5,8 @@ done during database session in leapfrog software engineering
 fellowship.
 
 ## About 
-All the code done during the assignment and classwork are seperated 
+All codes done during the assignments and classworks are seperated 
 in the folders with their respective day number.
 
-The project are done using PostgreSQL.
+These projects are done using PostgreSQL.
 
