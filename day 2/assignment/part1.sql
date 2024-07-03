@@ -132,7 +132,7 @@ JOIN assignment2.Courses c
 ON c.course_id = e.course_id
 GROUP BY student_name
 HAVING COUNT(e.course_id)=(
-SELECT COUNT(course_id) FROM assignment2.Courses
+  SELECT COUNT(course_id) FROM assignment2.Courses
 );
 
 -- Find students who are not enrolled in any courses.
