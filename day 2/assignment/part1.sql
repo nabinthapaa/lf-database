@@ -137,9 +137,9 @@ ON c.course_id = e.course_id
 GROUP BY course_name;
 
 SELECT course_name, 
-    (SELECT COUNT(*)
-     FROM assignment2.Enrollments e
-     WHERE e.course_id = c.course_id) AS student_count
+  (SELECT COUNT(*)
+  FROM assignment2.Enrollments e
+  WHERE e.course_id = c.course_id) AS student_count
 FROM assignment2.Courses c;
 
 -- Retrieve the course with the highest number of enrollments.
@@ -190,7 +190,7 @@ WHERE student_id IN(
 	SELECT student_id FROM assignment2.Enrollments e
 	GROUP BY student_id 
 	HAVING COUNT(e.course_id) = (
-		SELECT 	COUNT(*) FROM assignment2.Courses
+		SELECT COUNT(*) FROM assignment2.Courses
 	) 
 );
 
@@ -217,9 +217,9 @@ WHERE c.course_name='Science';
 
 SELECT AVG(s.student_age) AS average_age_science 
 FROM assignment2.Students s WHERE student_id IN(
-	SELECT student_id FROM assignment2.Enrollments e
+  SELECT student_id FROM assignment2.Enrollments e
 	WHERE course_id IN (
-		SELECT  course_id FROM assignment2.Courses c 
+    SELECT  course_id FROM assignment2.Courses c 
 		WHERE course_name = 'Science'
 	)
 );
@@ -241,10 +241,10 @@ SELECT student_name,
 )
 FROM assignment2.Students s 
 WHERE student_id IN (
-			SELECT student_id  FROM assignment2.Enrollments 
-			WHERE course_id = (
-				SELECT course_id FROM assignment2.Courses 
-				WHERE course_name = 'History'
-		)	
+  SELECT student_id  FROM assignment2.Enrollments 
+  WHERE course_id = (
+    SELECT course_id FROM assignment2.Courses 
+	  WHERE course_name = 'History'
+	)	
 ); 
 
